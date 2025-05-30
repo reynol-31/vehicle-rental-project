@@ -161,13 +161,6 @@ Color Palette used:
 - `#B9D4AA` (Light Olive)
 - `#FAFFCA` (Cream)
 
-
----
-
-## 📬 Feedback & Contributions
-
-Open issues or pull requests are welcome. Feel free to fork and customize this project for your own use.
-
 ---
 
 ## 📄 License
