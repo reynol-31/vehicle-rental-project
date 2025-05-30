@@ -1,0 +1,72 @@
+.vehicle-page {
+  background-color: #FAFFCA;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.vehicle-title {
+  color: #5A827E;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.vehicle-card {
+  background-color: #B9D4AA;
+  border: 2px solid #84AE92;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(90, 130, 126, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+}
+
+.vehicle-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.vehicle-name {
+  color: #5A827E;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.vehicle-desc {
+  color: #3d594f;
+  font-size: 0.95rem;
+}
+
+.vehicle-price {
+  font-weight: bold;
+  color: #3d594f;
+  margin: 1rem 0;
+}
+
+.book-btn {
+  background-color: #5A827E;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.book-btn:hover {
+  background-color: #3d594f;
+}
