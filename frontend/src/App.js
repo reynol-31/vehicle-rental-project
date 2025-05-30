@@ -7,12 +7,14 @@ import CustomerSignUp from './pages/CustomerSignUp';
 import VehicleList from './components/VehicleList';
 import RentalPage from './components/RentalPage';
 import PaymentPage from './components/PaymentPage';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   const location = useLocation();
 
 
-  const hideHeaderFooter = ['/', '/signup'].includes(location.pathname);
+  const hideHeaderFooter = ['/', '/signup','/admin-login'].includes(location.pathname);
 
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
         <Route path="/vehicles" element={<VehicleList />} />
         <Route path="/rental" element={<RentalPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </>

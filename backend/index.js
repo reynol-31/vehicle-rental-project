@@ -173,3 +173,50 @@ app.post('/api/feedback', (req, res) => {
 app.listen(5000, () => {
   console.log('Backend server running at http://localhost:5000');
 });
+
+// POST: Admin login (hardcoded)
+app.post('/api/admin-login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === 'admin' && password === 'admin') {
+    res.json({ message: 'Admin login successful' });
+  } else {
+    res.status(401).json({ error: 'Invalid admin credentials' });
+  }
+});
+
+// GET routes for admin dashboard to fetch all tables
+app.get('/api/admin/vehicles', (req, res) => {
+  db.query('SELECT * FROM vehicles', (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(result);
+  });
+});
+
+app.get('/api/admin/users', (req, res) => {
+  db.query('SELECT * FROM users', (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(result);
+  });
+});
+
+app.get('/api/admin/payments', (req, res) => {
+  db.query('SELECT * FROM payments', (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(result);
+  });
+});
+
+app.get('/api/admin/feedback', (req, res) => {
+  db.query('SELECT * FROM feedback', (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(result);
+  });
+});
+
+app.get('/api/admin/rentals', (req, res) => {
+  db.query('SELECT * FROM rental_details', (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(result);
+  });
+});
