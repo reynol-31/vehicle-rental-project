@@ -161,9 +161,9 @@ app.post('/api/payments', (req, res) => {
 
 // POST: Save feedback
 app.post('/api/feedback', (req, res) => {
-  const { vehicleId, rating, review } = req.body;
-  const query = 'INSERT INTO feedback (vehicle_id, rating, review) VALUES (?, ?, ?)';
-  db.query(query, [vehicleId, rating, review], (err, result) => {
+  const { vehicleId, userId, rating, review } = req.body;
+  const query = 'INSERT INTO feedback (vehicle_id, user_id, rating, review) VALUES (?, ?, ?, ?)';
+  db.query(query, [vehicleId, userId, rating, review], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json({ message: 'Feedback saved', id: result.insertId });
   });

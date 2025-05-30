@@ -5,21 +5,20 @@ function FeedbackPage({ vehicleId }) {
   const [review, setReview] = useState('');
 
   const handleSubmit = async () => {
-    const userId = Number(localStorage.getItem('userId')); // ✅ Get userId
-
+    const userId = Number(localStorage.getItem('userId')); 
     if (!userId) {
       alert("User not logged in.");
       return;
     }
 
     const feedbackData = {
-      userId,
       vehicleId,
+      userId,
       rating,
-      review
+      review,
     };
 
-    console.log('Sending feedback:', feedbackData); // Debug
+    console.log('Sending feedback:', feedbackData);
 
     try {
       const res = await fetch('http://localhost:5000/api/feedback', {
@@ -31,6 +30,8 @@ function FeedbackPage({ vehicleId }) {
       const result = await res.json();
       if (res.ok) {
         alert('Feedback submitted!');
+        setRating(5);
+        setReview('');
       } else {
         alert('Failed to submit feedback: ' + result.error);
       }

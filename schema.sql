@@ -1,12 +1,13 @@
 show tables;
 desc users;
 DESCRIBE payments;
+SELECT *FROM payments; 
+SELECT *FROM feedback;
 
 SELECT *FROM users;
 SELECT *FROM rental_details;
 SELECT *FROM feedback;
 DESCRIBE feedback;
-SELECT * FROM customer_login;
 SELECT * FROM users WHERE username = 'cse' AND email = 'dreynol31@gmail.com';
 SELECT username, email, password FROM users;
 SELECT *from vehicles;

@@ -14,6 +14,9 @@ function PaymentPage() {
     cvv: ''
   });
 
+  console.log("PaymentPage state:", location.state);
+
+
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handleChange = (e) => {
