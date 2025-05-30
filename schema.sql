@@ -19,3 +19,9 @@ WHERE vehicle_id = 5;
 SHOW COLUMNS FROM payments LIKE 'payment_method';
 ALTER TABLE payments 
 MODIFY payment_method ENUM('Cash', 'UPI', 'Card');
+
+
+SELECT * FROM users;
+SELECT * FROM payments;
+SELECT * FROM feedback;
+SELECT * FROM rental_details;
